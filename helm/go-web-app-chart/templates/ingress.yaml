@@ -4,14 +4,16 @@ metadata:
   name: go-web-app  # The name of the Ingress
   labels:
     app: go-web-app  # Labels to identify the Ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: {{ .Values.ingress.annotations.kubernetes.io/ingress.class }}  # Specifies the Ingress class (e.g., nginx)
+  ingressClassName: nginx
   rules:
-  - host: {{ .Values.ingress.hosts.host }}  # Hostname for the Ingress (e.g., go-web-app.local)
+  - host: go-web-app.local
     http:
       paths:
       - pathType: Prefix  # Specifies that the path should be treated as a prefix
-        path: {{ .Values.ingress.paths.path }}  # Path to match (e.g., /)
+        path: /
         backend:
           service:
             name: go-web-app  # Service to route traffic to
