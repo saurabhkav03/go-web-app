@@ -70,7 +70,7 @@ jobs:
         run: |
           git config user.name "Saurabh Kaveri"
           git config user.email "kaverisaurabh1998@gmail.com"
-          sed -i 's/tag: "[^"]*"/tag: "'${{ github.run_id }}'"/' helm/go-web-app-chart/values.yaml 
+          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/go-web-app-chart/values.yaml
           git add helm/go-web-app-chart/values.yaml
           git commit -m "Update the tag in helm chart"
           git push
