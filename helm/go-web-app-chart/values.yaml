@@ -7,7 +7,7 @@ replicaCount: 1  # Number of pod replicas
 image:
   repository: kaveri03/go-web-app  # Docker image repository
   pullPolicy: IfNotPresent  # Pull policy for the image
-  tag: v1  # Image tag to use
+  tag: "10365766830"
 
 service:
   type: LoadBalancer  # Service type, LoadBalancer will expose the Service externally
