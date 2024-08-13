@@ -73,4 +73,4 @@ jobs:
           sed -i 's/tag: "[^"]*"/tag: "'${{ github.run_id }}'"/' helm/go-web-app-chart/values.yaml 
           git add helm/go-web-app-chart/values.yaml
           git commit -m "Update the tag in helm chart"
-          git push origin main
+          git push
